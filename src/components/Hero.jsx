@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom';
+
 const Hero = () => {
   return (
-    <section className="hero" id="home">
+    <section className="hero">
       <div className="hero-background">
         <div className="hero-overlay"></div>
       </div>
@@ -13,12 +15,12 @@ const Hero = () => {
             From strategy to execution — we elevate your brand digitally.
           </p>
           <div className="hero-buttons">
-            <button className="btn btn-primary" onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>
+            <Link to="/contact" className="btn btn-primary">
               Let's Work Together
-            </button>
-            <button className="btn btn-secondary" onClick={() => document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' })}>
+            </Link>
+            <Link to="/portfolio" className="btn btn-secondary">
               View Our Work
-            </button>
+            </Link>
           </div>
         </div>
       </div>

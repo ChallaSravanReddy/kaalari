@@ -1,32 +1,30 @@
-import './App.css'
-import Header from './components/Header'
-import Hero from './components/Hero'
-import About from './components/About'
-import Services from './components/Services'
-import Portfolio from './components/Portfolio'
-import Team from './components/Team'
-import Testimonials from './components/Testimonials'
-import Pricing from './components/Pricing'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import ServicesPage from './pages/ServicesPage';
+import PortfolioPage from './pages/PortfolioPage';
+import TeamPage from './pages/TeamPage';
+import TestimonialsPage from './pages/TestimonialsPage';
+import PricingPage from './pages/PricingPage';
+import ContactPage from './pages/ContactPage';
 
 function App() {
   return (
-    <div className="app">
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Services />
-        <Portfolio />
-        <Team />
-        <Testimonials />
-        <Pricing />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
-  )
+    <Router>
+      <div className="min-h-screen">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/portfolio" element={<PortfolioPage />} />
+          <Route path="/team" element={<TeamPage />} />
+          <Route path="/testimonials" element={<TestimonialsPage />} />
+          <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;;

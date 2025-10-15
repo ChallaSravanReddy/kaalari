@@ -20,6 +20,7 @@ body {
   background-color: var(--white);
   line-height: 1.6;
   overflow-x: hidden;
+  padding-top: 80px; /* Account for fixed header */
 }
 
 .app {
@@ -183,7 +184,7 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 100px 0 50px;
+  padding: 50px 0 50px; /* Reduced top padding */
   background: linear-gradient(135deg, var(--ivory) 0%, var(--white) 100%);
   overflow: hidden;
 }

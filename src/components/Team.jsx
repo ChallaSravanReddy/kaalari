@@ -33,7 +33,7 @@ const Team = () => {
   ];
 
   return (
-    <section className="team-section" id="team">
+    <section className="team-section">
       <div className="container">
         <div className="section-header">
           <h2>Meet the Minds Behind the Magic</h2>

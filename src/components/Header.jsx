@@ -1,15 +1,8 @@
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    setIsMenuOpen(false);
-  };
 
   return (
     <header className="header">
@@ -27,16 +20,16 @@ const Header = () => {
           </button>
 
           <nav className={`nav ${isMenuOpen ? 'active' : ''}`}>
-            <a onClick={() => scrollToSection('home')}>Home</a>
-            <a onClick={() => scrollToSection('services')}>Services</a>
-            <a onClick={() => scrollToSection('portfolio')}>Portfolio</a>
-            <a onClick={() => scrollToSection('team')}>Team</a>
-            <a onClick={() => scrollToSection('testimonials')}>Testimonials</a>
-            <a onClick={() => scrollToSection('pricing')}>Pricing</a>
-            <a onClick={() => scrollToSection('contact')}>Contact</a>
-            <button className="cta-button" onClick={() => scrollToSection('contact')}>
+            <Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
+            <Link to="/services" onClick={() => setIsMenuOpen(false)}>Services</Link>
+            <Link to="/portfolio" onClick={() => setIsMenuOpen(false)}>Portfolio</Link>
+            <Link to="/team" onClick={() => setIsMenuOpen(false)}>Team</Link>
+            <Link to="/testimonials" onClick={() => setIsMenuOpen(false)}>Testimonials</Link>
+            <Link to="/pricing" onClick={() => setIsMenuOpen(false)}>Pricing</Link>
+            <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link>
+            <Link to="/contact" className="cta-button" onClick={() => setIsMenuOpen(false)}>
               Get a Quote
-            </button>
+            </Link>
           </nav>
         </div>
       </div>
