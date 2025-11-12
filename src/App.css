@@ -20,7 +20,7 @@ body {
   background-color: var(--white);
   line-height: 1.6;
   overflow-x: hidden;
-  padding-top: 80px; /* Account for fixed header */
+  padding-top: 120px; /* Account for fixed header */
 }
 
 .app {
@@ -59,21 +59,23 @@ body {
 
 .header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 60px);
+  max-width: 1100px;
+  background: transparent;
   z-index: 1000;
   transition: var(--transition);
+  pointer-events: none;
 }
 
 .header-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 20px 0;
+  padding: 0;
+  pointer-events: auto;
 }
 
 .logo {
@@ -83,20 +85,17 @@ body {
 }
 
 .logo h1 {
-  font-size: 2rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  background: linear-gradient(135deg, var(--gold), var(--royal-blue));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: 2px;
+  color: var(--royal-blue);
+  letter-spacing: 1px;
+  margin: 0;
+  background: none;
+  -webkit-text-fill-color: unset;
 }
 
 .logo-subtitle {
-  font-size: 0.8rem;
-  color: var(--charcoal);
-  letter-spacing: 3px;
-  margin-left: 2px;
+  display: none;
 }
 
 .menu-toggle {
@@ -120,31 +119,85 @@ body {
 .nav {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 32px;
+  background: var(--white);
+  padding: 12px 32px;
+  border-radius: 999px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
 }
 
 .nav a {
-  color: var(--charcoal);
+  color: #1f2937;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   transition: var(--transition);
   cursor: pointer;
   position: relative;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.nav a:hover {
+  color: var(--royal-blue);
+  background: rgba(0, 74, 173, 0.08);
 }
 
 .nav a::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--gold);
-  transition: var(--transition);
+  display: none;
 }
 
-.nav a:hover::after {
-  width: 100%;
+.outside-logo {
+  position: fixed;
+  left: 24px;
+  top: 20px;
+  z-index: 1200;
+  pointer-events: auto;
+}
+
+.outside-logo .logo h1 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--royal-blue);
+  margin: 0;
+}
+
+.outside-logo .logo-subtitle {
+  display: none;
+}
+
+.outside-call {
+  position: fixed;
+  right: 24px;
+  top: 20px;
+  z-index: 1200;
+  pointer-events: auto;
+}
+
+.outside-call .cta-button {
+  background: #0f172a;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.3);
+}
+
+.outside-call .cta-button::after {
+  content: '↗';
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 0.8rem;
 }
 
 .cta-button, .btn {

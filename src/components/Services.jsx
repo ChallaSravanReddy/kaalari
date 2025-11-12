@@ -1,3 +1,5 @@
+import '../styles/Services.css';
+
 const Services = () => {
   const services = [
     {
@@ -33,20 +35,19 @@ const Services = () => {
   ];
 
   return (
-    <section className="services-section">
-      <div className="container">
-        <div className="section-header">
-          <h2>Our Services</h2>
-          <div className="section-divider"></div>
-          <p className="section-subtitle">Comprehensive digital solutions to grow your business</p>
+    <section id="services" className="services-section">
+      <div className="services-container">
+        <div className="services-header">
+          <h2 className="services-title">Our <span className="highlight">Services</span></h2>
+          <p className="services-subtitle">Comprehensive digital solutions to grow your business</p>
         </div>
         <div className="services-grid">
           {services.map((service, index) => (
             <div className="service-card" key={index}>
               <div className="service-icon">{service.icon}</div>
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-              <button className="learn-more">Learn More →</button>
+              <h3 className="service-title">{service.title}</h3>
+              <p className="service-description">{service.description}</p>
+              <button className="service-cta">Learn More →</button>
             </div>
           ))}
         </div>

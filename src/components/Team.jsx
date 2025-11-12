@@ -1,3 +1,5 @@
+import '../styles/Team.css';
+
 const Team = () => {
   const teamMembers = [
     {
@@ -33,23 +35,26 @@ const Team = () => {
   ];
 
   return (
-    <section className="team-section">
-      <div className="container">
-        <div className="section-header">
-          <h2>Meet the Minds Behind the Magic</h2>
-          <div className="section-divider"></div>
-          <p className="section-subtitle">Our talented team of digital experts</p>
+    <section id="team" className="team-section">
+      <div className="team-container">
+        <div className="team-header">
+          <h2 className="team-title">Meet the Minds Behind the <span className="highlight">Magic</span></h2>
+          <p className="team-subtitle">Our talented team of digital experts</p>
         </div>
         <div className="team-grid">
           {teamMembers.map((member, index) => (
             <div className="team-card" key={index}>
-              <div className="team-image">
-                <img src={member.image} alt={member.name} />
+              <div className="team-image-wrapper">
+                <img src={member.image} alt={member.name} className="team-image" />
+                <div className="team-socials">
+                  <a href="#" className="social-link">👔</a>
+                  <a href="#" className="social-link">🐦</a>
+                  <a href="#" className="social-link">📧</a>
+                </div>
               </div>
-              <div className="team-info">
-                <h3>{member.name}</h3>
-                <p>{member.role}</p>
-              </div>
+              <h3 className="team-name">{member.name}</h3>
+              <p className="team-position">{member.role}</p>
+              <p className="team-bio">Expert in their field with a passion for excellence.</p>
             </div>
           ))}
         </div>

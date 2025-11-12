@@ -1,3 +1,5 @@
+import '../styles/Pricing.css';
+
 const Pricing = () => {
   const plans = [
     {
@@ -63,55 +65,32 @@ const Pricing = () => {
   ];
 
   return (
-    <section className="pricing-section">
-      <div className="container">
-        <div className="section-header">
-          <h2>Flexible Plans for Every Business</h2>
-          <div className="section-divider"></div>
-          <p className="section-subtitle">Choose the perfect plan to grow your brand</p>
+    <section id="pricing" className="pricing-section">
+      <div className="pricing-container">
+        <div className="pricing-header">
+          <h2 className="pricing-title">Flexible Plans for <span className="highlight">Every Business</span></h2>
+          <p className="pricing-subtitle">Choose the perfect plan to grow your brand</p>
         </div>
         <div className="pricing-grid">
           {plans.map((plan, index) => (
             <div className={`pricing-card ${plan.popular ? 'popular' : ''}`} key={index}>
-              {plan.popular && <div className="popular-badge">Most Popular</div>}
-              <h3>{plan.name}</h3>
-              <div className="price">
-                <span className="currency">$</span>
-                <span className="amount">{plan.price}</span>
-                <span className="period">/{plan.period}</span>
+              {plan.popular && <div className="pricing-badge">Most Popular</div>}
+              <h3 className="pricing-name">{plan.name}</h3>
+              <p className="pricing-description">Perfect for growing teams</p>
+              <div className="pricing-amount">
+                <span className="price">
+                  <span className="price-currency">$</span>{plan.price}
+                  <span className="price-period">/{plan.period}</span>
+                </span>
               </div>
-              <ul className="features-list">
+              <ul className="pricing-features">
                 {plan.features.map((feature, i) => (
-                  <li key={i}>
-                    <span className="checkmark">✓</span>
-                    {feature}
-                  </li>
+                  <li className="feature-item" key={i}>{feature}</li>
                 ))}
               </ul>
-              <button className="btn btn-pricing">Get Started</button>
+              <button className="pricing-cta">Get Started</button>
             </div>
           ))}
-        </div>
-        <div className="pricing-faq">
-          <h3>Frequently Asked Questions</h3>
-          <div className="faq-grid">
-            <div className="faq-item">
-              <h4>Can I switch plans later?</h4>
-              <p>Yes, you can upgrade or downgrade your plan at any time.</p>
-            </div>
-            <div className="faq-item">
-              <h4>What payment methods do you accept?</h4>
-              <p>We accept all major credit cards, PayPal, and bank transfers.</p>
-            </div>
-            <div className="faq-item">
-              <h4>Is there a long-term contract?</h4>
-              <p>No, all plans are month-to-month with no long-term commitment required.</p>
-            </div>
-            <div className="faq-item">
-              <h4>Do you offer custom solutions?</h4>
-              <p>Yes, our Enterprise plan includes fully customized solutions tailored to your needs.</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>

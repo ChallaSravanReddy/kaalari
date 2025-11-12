@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import '../styles/Portfolio.css';
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -62,12 +63,11 @@ const Portfolio = () => {
     : projects.filter(project => project.category === activeFilter);
 
   return (
-    <section className="portfolio-section">
-      <div className="container">
-        <div className="section-header">
-          <h2>Our Portfolio</h2>
-          <div className="section-divider"></div>
-          <p className="section-subtitle">Success stories we're proud to share</p>
+    <section id="portfolio" className="portfolio-section">
+      <div className="portfolio-container">
+        <div className="portfolio-header">
+          <h2 className="portfolio-title">Our <span className="highlight">Portfolio</span></h2>
+          <p className="portfolio-subtitle">Success stories we&apos;re proud to share</p>
         </div>
 
         <div className="portfolio-filters">
@@ -84,24 +84,15 @@ const Portfolio = () => {
 
         <div className="portfolio-grid">
           {filteredProjects.map(project => (
-            <div className="portfolio-card" key={project.id}>
-              <div className="portfolio-image">
-                <img src={project.image} alt={project.title} />
-                <div className="portfolio-overlay">
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-                  <button className="btn-view">View Project</button>
-                </div>
+            <div className="portfolio-item" key={project.id}>
+              <img src={project.image} alt={project.title} className="portfolio-image" />
+              <div className="portfolio-overlay">
+                <div className="portfolio-overlay-title">{project.title}</div>
+                <div className="portfolio-overlay-category">{project.description}</div>
+                <button className="portfolio-view-btn">View Project</button>
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="portfolio-cta">
-          <p>Want results like these?</p>
-          <button className="btn btn-primary" onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>
-            Let's Collaborate
-          </button>
         </div>
       </div>
     </section>
