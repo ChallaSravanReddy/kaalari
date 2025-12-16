@@ -40,10 +40,10 @@ const Footer = () => {
             <h4 className="footer-title">Contact Info</h4>
             <ul className="footer-links">
               <li className="footer-text">📧 <a href="mailto:info@kaalari.com" className="footer-link">info@kaalari.com</a></li>
-              <li className="footer-text">📞 <a href="tel:+15551234567" className="footer-link">+1 (555) 123-4567</a></li>
-              <li className="footer-text">📍 123 Digital Avenue, Tech City</li>
-              <li className="footer-text">🕒 Mon - Fri: 9AM - 6PM</li>
-            </ul>
+              <li className="footer-text">📞 <a href="tel:+917207068401" className="footer-link">+917207068401</a></li>
+              <li className="footer-text">📍 Hyderabad</li>
+              <li className="footer-text">🕒 Anytime available</li>
+            </ul> 
           </div>
         </div>
         <hr className="footer-divider" />

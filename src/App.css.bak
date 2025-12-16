@@ -1,5 +1,4 @@
-﻿/* Global Styles and CSS Variables Only */
-/* Component-specific styles are in their own CSS files */
+/* Global Styles and CSS Variables Only */
 
 * {
   margin: 0;
@@ -23,18 +22,12 @@ body {
   background-color: var(--white);
   line-height: 1.6;
   overflow-x: hidden;
-}
-
-.app {
-  width: 100%;
   margin: 0;
   padding: 0;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+.app {
+  width: 100%;
 }
 
 /* Global Animations */
@@ -53,34 +46,10 @@ body {
   animation: fadeInUp 1s ease forwards;
 }
 
-/* Global Utilities */
+/* Global Gradient Text Utility */
 .gradient-text {
   background: linear-gradient(135deg, var(--gold), var(--royal-blue));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.section-header h2 {
-  font-size: 2.5rem;
-  color: var(--charcoal);
-  margin-bottom: 15px;
-}
-
-.section-divider {
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(90deg, var(--gold), var(--royal-blue));
-  margin: 0 auto 20px;
-  border-radius: 2px;
-}
-
-.section-subtitle {
-  font-size: 1.1rem;
-  color: #666;
 }

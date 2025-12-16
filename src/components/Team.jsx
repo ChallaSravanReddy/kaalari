@@ -1,36 +1,80 @@
 import '../styles/Team.css';
+import rishiImg from '../assets/rishi.jpg';
+import adithyaImg from '../assets/adithya.jpg';
+import swachathaImg from '../assets/swachatha.jpg';
+import chanduImg from '../assets/chandu.jpg';
+import pradeepImg from '../assets/pradeep.jpg';
+import pavithraImg from '../assets/pavithra.jpg';
+import sravanImg from '../assets/sravan.jpg';
+import prudhviImg from '../assets/prudhvi.jpg';
+import akshithaImg from '../assets/akshitha.jpg';
 
 const Team = () => {
-  const teamMembers = [
+  const teamCategories = [
     {
-      name: 'Sarah Johnson',
-      role: 'Creative Director',
-      image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400'
+      category: 'Leadership',
+      members: [
+        {
+          name: 'Rishi',
+          role: 'Founder',
+          image: rishiImg
+        },
+        {
+          name: 'Aditya',
+          role: 'Co-Founder',
+          image: adithyaImg
+        }
+      ]
     },
     {
-      name: 'Michael Chen',
-      role: 'Strategy Lead',
-      image: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400'
+      category: 'Management',
+      members: [
+        {
+          name: 'Swachatha',
+          role: 'Manager',
+          image: swachathaImg
+        }
+      ]
     },
     {
-      name: 'Emily Rodriguez',
-      role: 'Digital Marketing Manager',
-      image: 'https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=400'
+      category: 'Actors',
+      members: [
+        {
+          name: 'Pradeep',
+          role: 'Actor',
+          image: pradeepImg
+        },
+        {
+          name: 'Pavithra',
+          role: 'Actor',
+          image: pavithraImg
+        },
+        {
+          name: 'Akshitha',
+          role: 'Actor',
+          image: akshithaImg
+        }
+      ]
     },
     {
-      name: 'David Park',
-      role: 'Lead Developer',
-      image: 'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=400'
-    },
-    {
-      name: 'Lisa Anderson',
-      role: 'Content Strategist',
-      image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400'
-    },
-    {
-      name: 'James Wilson',
-      role: 'Video Production Lead',
-      image: 'https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=400'
+      category: 'Production & Technical',
+      members: [
+        {
+          name: 'Chandu',
+          role: 'Cinematographer',
+          image: chanduImg
+        },
+        {
+          name: 'Sravan',
+          role: 'Web Analytics & Data Tracking',
+          image: sravanImg
+        },
+        {
+          name: 'Prudhvi',
+          role: 'Client Manager',
+          image: prudhviImg
+        }
+      ]
     }
   ];
 
@@ -41,23 +85,36 @@ const Team = () => {
           <h2 className="team-title">Meet the Minds Behind the <span className="highlight">Magic</span></h2>
           <p className="team-subtitle">Our talented team of digital experts</p>
         </div>
-        <div className="team-grid">
-          {teamMembers.map((member, index) => (
-            <div className="team-card" key={index}>
-              <div className="team-image-wrapper">
-                <img src={member.image} alt={member.name} className="team-image" />
-                <div className="team-socials">
-                  <a href="#" className="social-link">👔</a>
-                  <a href="#" className="social-link">🐦</a>
-                  <a href="#" className="social-link">📧</a>
+        {teamCategories.map((category, catIndex) => (
+          <div key={catIndex} className="team-category">
+            <h3 className="category-title">{category.category}</h3>
+            <div className="team-grid">
+              {category.members.map((member, index) => (
+                <div className="team-card" key={index}>
+                  {member.image && (
+                    <div className="team-image-wrapper">
+                      <img src={member.image} alt={member.name} className="team-image" />
+                      <div className="team-socials">
+                        <a href="#" className="social-link">👔</a>
+                        <a href="#" className="social-link">🐦</a>
+                        <a href="#" className="social-link">📧</a>
+                      </div>
+                    </div>
+                  )}
+                  <h3 className="team-name">{member.name}</h3>
+                  <p className="team-position">{member.role}</p>
+                  {member.skills && (
+                    <div className="team-skills">
+                      {member.skills.map((skill, idx) => (
+                        <span key={idx} className="skill-tag">{skill}</span>
+                      ))}
+                    </div>
+                  )}
                 </div>
-              </div>
-              <h3 className="team-name">{member.name}</h3>
-              <p className="team-position">{member.role}</p>
-              <p className="team-bio">Expert in their field with a passion for excellence.</p>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );

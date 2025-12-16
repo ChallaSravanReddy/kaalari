@@ -43,8 +43,8 @@ const Contact = () => {
               <div className="info-icon">📞</div>
               <h3 className="info-title">Call Us</h3>
               <div className="info-content">
-                <a href="tel:+15551234567">+1 (555) 123-4567</a><br />
-                <a href="tel:+15559876543">+1 (555) 987-6543</a>
+                <a href="tel:+917207068401">+917207068401</a><br />
+                <a href="tel:+918121358586">+918121358586</a>
               </div>
             </div>
             <div className="info-card">
@@ -59,7 +59,7 @@ const Contact = () => {
               <div className="info-icon">💬</div>
               <h3 className="info-title">WhatsApp</h3>
               <div className="info-content">
-                <a href="https://wa.me/15551112222">+1 (555) 111-2222</a><br />
+                <a href="https://wa.me/917207068401">+917207068401</a><br />
                 Quick response guaranteed
               </div>
             </div>
@@ -100,7 +100,7 @@ const Contact = () => {
                 className="form-input"
                 value={formData.phone}
                 onChange={handleChange}
-                placeholder="+1 (555) 123-4567"
+                placeholder="+91 7207068401"
               />
             </div>
             <div className="form-group full">

@@ -35,12 +35,12 @@ const Header = () => {
 
           {/* Call Us Button Inside Nav */}
           <a 
-            href="tel:+15551234567" 
+            href="tel:+917207068401" 
             onClick={() => setIsMenuOpen(false)}
             className="header-cta-button"
           >
             Call Us
-            <span>↗</span>
+            
           </a>
         </nav>
       </div>
