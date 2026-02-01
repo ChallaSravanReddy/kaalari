@@ -7,7 +7,7 @@ import pradeepImg from '../assets/pradeep.jpg';
 import pavithraImg from '../assets/pavithra.jpg';
 import sravanImg from '../assets/sravan.jpg';
 import prudhviImg from '../assets/prudhvi.jpg';
-import poorviImg from '../assets/poorvi.jpeg';
+import poorviImg from '../assets/Poorvi.jpeg';
 
 const Team = () => {
   const teamCategories = [
