@@ -1,5 +1,5 @@
 import '../styles/Team.css';
-import rishiImg from '../assets/rishi.jpg';
+import rishiImg from '../assets/Rishi.jpeg';
 import adithyaImg from '../assets/adithya.jpg';
 import swachathaImg from '../assets/swachatha.jpg';
 import chanduImg from '../assets/chandu.jpg';
@@ -7,7 +7,7 @@ import pradeepImg from '../assets/pradeep.jpg';
 import pavithraImg from '../assets/pavithra.jpg';
 import sravanImg from '../assets/sravan.jpg';
 import prudhviImg from '../assets/prudhvi.jpg';
-import akshithaImg from '../assets/akshitha.jpg';
+import poorviImg from '../assets/poorvi.jpeg';
 
 const Team = () => {
   const teamCategories = [
@@ -33,6 +33,11 @@ const Team = () => {
           name: 'Swachatha',
           role: 'Manager',
           image: swachathaImg
+        },
+        {
+          name: 'Poorvi',
+          role: 'Project Coordinator',
+          image: poorviImg
         }
       ]
     },
@@ -48,11 +53,6 @@ const Team = () => {
           name: 'Pavithra',
           role: 'Actor',
           image: pavithraImg
-        },
-        {
-          name: 'Akshitha',
-          role: 'Actor',
-          image: akshithaImg
         }
       ]
     },

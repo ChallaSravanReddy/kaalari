@@ -3,21 +3,8 @@ import '../styles/Pricing.css';
 const Pricing = () => {
   const plans = [
     {
-      name: 'Basic',
-      price: '999',
-      period: 'month',
-      features: [
-        'Social Media Management (2 platforms)',
-        'Content Creation (8 posts/month)',
-        'Monthly Analytics Report',
-        'Email Support',
-        'Basic SEO Optimization'
-      ],
-      popular: false
-    },
-    {
       name: 'Standard',
-      price: '2499',
+      price: '28999',
       period: 'month',
       features: [
         'Social Media Management (4 platforms)',
@@ -32,7 +19,7 @@ const Pricing = () => {
     },
     {
       name: 'Premium',
-      price: '4999',
+      price: '59999',
       period: 'month',
       features: [
         'Full Social Media Management',
@@ -43,22 +30,6 @@ const Pricing = () => {
         'Professional Video Production',
         'Influencer Partnerships',
         'Custom Web Development'
-      ],
-      popular: false
-    },
-    {
-      name: 'Enterprise',
-      price: 'Custom',
-      period: 'contact us',
-      features: [
-        'Everything in Premium',
-        'Dedicated Account Manager',
-        'Custom Strategy & Solutions',
-        'Multi-brand Management',
-        'Advanced Analytics & Reporting',
-        'White-label Services',
-        'API Integration',
-        'Training & Workshops'
       ],
       popular: false
     }
@@ -79,7 +50,7 @@ const Pricing = () => {
               <p className="pricing-description">Perfect for growing teams</p>
               <div className="pricing-amount">
                 <span className="price">
-                  <span className="price-currency">$</span>{plan.price}
+                  <span className="price-currency">₹</span>{plan.price}
                   <span className="price-period">/{plan.period}</span>
                 </span>
               </div>
